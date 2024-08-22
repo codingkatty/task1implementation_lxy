@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 1 Implementation</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+
+        <style>
+            .navbar {
+                height:50px;
+                font-size:20px;
+                border:none;
+                padding:10px;
+            }
+            .navbar:hover {
+                text-decoration:underline;
+                text-decoration-thickness:8px;
+                text-decoration-color:purple;
+            }
+            div {
+                padding:5px;
+                margin:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div align="center">
+            <button onClick="changePage(1);" class="navbar">basic tag</button>
+            <button onClick="changePage(2);" class="navbar">elements</button>
+            <button onClick="changePage(3);" class="navbar">attributes</button>
+            <button onClick="changePage(4);" class="navbar">formatting</button>
+        </div>
+
+        <div class="PAGE">
+            <h1>Heading tag 1</h1> 
+
+            <div style="word-wrap:break-word;border:1px solid #000000;width:150px;float:right;position:relative;">
+                <p>The fluffy bunnies were actually <mark>secret agents</mark>, armed with cute furry bombs that exploded into rainbows and glitter.</p>
+            </div> <br /> <br />
+
+            <h2>Heading tag 2</h2> <br />
+            <h3 align="center">Heading tag 3 (but centred)</h3> <br />
+
+            <div style="word-wrap:break-word;border:1px solid #000000;width:150px;float:right;position:relative;">
+                <p>The fluffy bunnies were actually <mark>secret&nbsp;agents</mark>, armed with cute furry bombs that exploded into rainbows and glitter.</p>
+            </div> <br />
+
+            <h4>Heading tag 4</h4> <br />
+            <h5>Heading tag 5</h5> <br />
+            <h6>Heading tag 6</h6> <br /> <br />
+
+            <hr />
+
+            <p>Hi there! I'm a paragraph! Above me is a horizontal line and <br />I just <mark>changed a line!</mark> (btw preserve formatting is at the 'formatting' page ;) </p>
+        </div>
+
+        <div class="PAGE">
+            <br />
+            <p>Here's a random wiki article:</p> <br /> <br />
+
+            <p style="font-family:Arial;font-size:16px;line-height:1.6;margin:10px;">
+                <img src="https://upload.wikimedia.org/wikipedia/en/6/68/Oh_What_a_Feeling_A_Vital_Collection_of_Canadian_Music.jpg" alt="loading" style="float:right;position:relative;margin:10px;">
+               <b><i>Oh What a Feeling: A Vital Collection of Canadian Music</i></b> is a 4-CD box set released in 1996 to celebrate the 25th anniversary of the <a href="https://en.wikipedia.org/wiki/Juno_Awards">Juno Awards</a>. A second box set, <b><i>Oh What a Feeling 2</i></b>, was released in 2001 to mark the awards' 30th anniversary, and a third set, <b><i>Oh What a Feeling 3</i></b>, was released in 2006 for the 35th anniversary. All of the sets feature popular <a href="https://en.wikipedia.org/wiki/Music_of_Canada">Canadian</a> songs from the 1960s onward. The sets were titled for the song "Oh What a Feeling" by rock band <a href="https://en.wikipedia.org/wiki/Crowbar_(Canadian_band)">Crowbar</a>. The original 25th anniversary box set peaked at No. 3 on the <a href="https://en.wikipedia.org/wiki/Canadian_Albums_Chart">Canadian Albums Chart<sup style="text-decoration:none;">[1]</sup></a> and was certified Diamond in Canada.<a href="https://en.wikipedia.org/wiki/Oh_What_a_Feeling:_A_Vital_Collection_of_Canadian_Music#cite_note-2"><sup style="text-decoration:none;">[2]</sup></a>
+            </p>  <br /><br />
+
+            <a href="https://en.wikipedia.org/wiki/Oh_What_a_Feeling:_A_Vital_Collection_of_Canadian_Music" target="_blank">check out the original here!</a>
+        </div>
+
+        <div class="PAGE">
+            <h3 align="center">I can go to the <b>center</b> :))</h3>
+            <h3 align="right">ooo I'm at the <b>right</b>!!</h3>
+            <h3 align="left">back to the <b>left</b> TvT</h3>
+
+            <h4>I can also be <span style="font-size:60px;color:purple;font-family: 'DM Serif Text', serif;font-weight: 400;font-style: normal;">FANCY</span></h4> <br /><br />
+
+            <h2 title="never gonna give you up">try hovering over me! (title attribute)</h2> <br />
+            <h3 dir="rtl">or try reading me! (dir attribute)</h3>
+
+        </div>
+
+        <div class="PAGE" style="position:relative;">
+            <h1>hi there welcome to the format place!! :D<br></h1>
+            <h2>you can find different kinds of text here ^-^</h2>
+
+            <p style="line-height:30px;"><b>bold</b> text <br /> <i>italic</i> text <br /> <u>underlined</u> text <br /> <strike>stiked-through</strike> text <br /> <tt>monospaced</tt> text <br /> <sup>superscript</sup> text <br /> <sub>subscipt</sub> text <br /> <del>deleted</del> <ins>inserted</ins> text <br /> <big>larger</big> text <br /> <small>smaller</small> text </p>
+
+            <pre style="border:1px solid #000000;position:absolute;right:50px;top:80px;">
+    var getPages = document.getElementsByClassName("PAGE");  
+
+    function changePage(index) {
+
+        for(var i = 0; i < getPages.length; i++){
+            getPages[i].style.display = "none";
+        }
+                
+        getPages[index - 1].style.display = "block";
+                
+        window.scroll(0, 0);
+    }
+            
+    changePage(1);
+            </pre> <br />
+            <p style="float:right;position:absolute;top:50px;right:50px;">preserve formatting :D</p>
+
+        </div>
+
+        <script>
+            var getPages = document.getElementsByClassName("PAGE");
+
+            function changePage(index) {
+
+                for(var i = 0; i < getPages.length; i++){
+                    getPages[i].style.display = "none";
+                }
+                
+                getPages[index - 1].style.display = "block";
+                
+                window.scroll(0, 0);
+            }
+            
+            changePage(1);
+        </script>
+    </body>
+</html>
